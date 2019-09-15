@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "53fc363b3ef06dd139d25163918400dfce0f62e80f56e89f70e51fef8c7d0f00"
+            "sha256": "b386a0f13a43f014c37a47651cbddebe40a483989b73ef4f08cc6197d1eb7790"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,6 +16,13 @@
         ]
     },
     "default": {
+        "imutils": {
+            "hashes": [
+                "sha256:857af6169d90e4a0a814130b9b107f5d611150ce440107e1c1233521c6fb1e2b"
+            ],
+            "index": "pypi",
+            "version": "==0.5.3"
+        },
         "numpy": {
             "hashes": [
                 "sha256:05dbfe72684cc14b92568de1bc1f41e5f62b00f714afc9adee42f6311738091f",
@@ -99,7 +106,15 @@
                 "sha256:ef6be704ae2bc8ad0ebc5cb850ee9139493b0fc4e81abcc240fb392a63ebc808",
                 "sha256:f8dc19d92896558f9c4317ee365729ead9d7bbcf2052a9a19a3ef17abbb8ac5b"
             ],
+            "index": "pypi",
             "version": "==6.1.0"
+        },
+        "pytesseract": {
+            "hashes": [
+                "sha256:ae1dce01413d1f8eb0614fd65d831e26e649dc1a31699b7275455c57aa563b59"
+            ],
+            "index": "pypi",
+            "version": "==0.3.0"
         },
         "six": {
             "hashes": [

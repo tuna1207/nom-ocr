@@ -9,6 +9,9 @@ verify_ssl = true
 torch = ">=0.4.1"
 torchvision = ">=0.2.1"
 opencv-python = ">=3.4.2"
+pillow = "*"
+pytesseract = "*"
+imutils = "*"
 
 [requires]
 python_version = "3.6"
