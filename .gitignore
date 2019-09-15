@@ -1,6 +1,6 @@
 *.pyc
 *.swp
 *.pkl
-*.pth
+# *.pth
 result*
-weights*
+# weights*
