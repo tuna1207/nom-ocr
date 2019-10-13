@@ -44,7 +44,7 @@ def str2bool(v):
 
 parser = argparse.ArgumentParser(description='CRAFT Text Detection')
 parser.add_argument('--trained_model', default='./weights/craft_mlt_25k.pth', type=str, help='pretrained model')
-parser.add_argument('--text_threshold', default=0.5, type=float, help='text confidence threshold')
+parser.add_argument('--text_threshold', default=0.7, type=float, help='text confidence threshold')
 parser.add_argument('--low_text', default=0.4, type=float, help='text low-bound score')
 parser.add_argument('--link_threshold', default=0.4, type=float, help='link confidence threshold')
 parser.add_argument('--cuda', default=False, type=str2bool, help='Use cuda to train model')
@@ -55,6 +55,7 @@ parser.add_argument('--show_time', default=False, action='store_true', help='sho
 parser.add_argument('--test_folder', default='../data/', type=str, help='folder path to input images')
 parser.add_argument('--result_folder', default='./result/', type=str, help='folder path to result images')
 parser.add_argument('--text_result_only', default=False, type=str2bool, help='create only text file result')
+parser.add_argument('--text_score_only', default=False, type=str2bool, help='get only text score result')
 
 args = parser.parse_args()
 
@@ -91,7 +92,7 @@ def test_net(net, image, text_threshold, link_threshold, low_text, cuda, poly):
     t1 = time.time()
 
     # Post-processing
-    boxes, polys = craft_utils.getDetBoxes(score_text, score_link, text_threshold, link_threshold, low_text, poly)
+    boxes, polys = craft_utils.getDetBoxes(score_text, score_link, text_threshold, link_threshold, low_text, poly, text_only=args.text_score_only)
 
     # coordinate adjustment
     boxes = craft_utils.adjustResultCoordinates(boxes, ratio_w, ratio_h)
